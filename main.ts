@@ -16,6 +16,7 @@ export const db: PostgresJsDatabase<typeof schema> = drizzle(client, {
   schema: schema,
 });
 
+// there should be a red quiggly line under `inviteUsers`
 export async function inviteUsers(data: z.infer<typeof sendInvitesValidator>) {
   const res = await db
     .insert(schema.invites)
